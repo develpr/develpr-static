@@ -5152,11 +5152,7 @@ th.hide-for-touch {
     	padding:0;
     	color: #333333;
     	text-shadow: 0 1px 2px #FFF;
-		padding:.2em 0 0 1.2em;
-  }
-  
-  .title{
-	  width:100%;
+		padding:.2em 0 0 0;
   }
   
   .i-will-be-down-there-a-bit{
@@ -5165,7 +5161,7 @@ th.hide-for-touch {
   }
   
   #me-here{
-	  float:left; width:100px; height:100px; 
+	  height:100px;
   }
   
   .large-menu{
