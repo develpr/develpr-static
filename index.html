@@ -1,0 +1,259 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kevin Mitchell - Develpr</title>
+<link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/foundation.css"/>
+<link rel="stylesheet" href="css/foundation-icons.css"/>
+<link rel="stylesheet" href="css/prism.css"/>
+<script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+<div class="off-canvas-wrap">
+	<div class="inner-wrap">
+		<nav class="tab-bar hide-for-large-up">
+		<section class="right-small">
+		<a class="right-off-canvas-toggle menu-icon">
+		<span>
+		</span>
+		</a>
+		</section>
+		</nav>
+		<aside class="right-off-canvas-menu">
+		<ul class="off-canvas-list">
+		</ul>
+		</aside>
+		<section class="main-section">
+		<div class="row i-will-be-down-there-a-bit">
+			<div class="large-6 medium-6 small-12 columns">
+				<div id="me-here">
+				</div>
+				<div class="title">
+					 Develpr
+				</div>
+			</div>
+			<div class="large-6 medium-6 show-for-large-up columns" style="padding-right:0;">
+				<nav class="large-menu">
+				<ul>
+					<li>
+					<a href="/projects">
+					<i class="fi-link">
+					</i>
+					Projects </a>
+					</li>
+					<li>
+					<a href="/blog">
+					<i class="fi-link">
+					</i>
+					Blog </a>
+					</li>
+					<li>
+					<a href="http://www.github.com/develpr" target="_blank">
+					<i class="fi-social-github"></i>
+					Github </a>
+					</li>
+					<!-- 
+		<li>
+		<a href="/kevin-mitchell-resume">
+		<i class="fi-link">
+		</i>
+		Resume
+		</a>
+		</li>
+		-->
+					<li>
+					<a href="/contact">
+					<i class="fi-mail">
+					</i>
+					Contact </a>
+					</li>
+				</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="row content-cards">
+			<div class="columns large-9 small-12 create-right-buffer">
+				<div class="row">
+					<div class="columns content-card project">
+						<h4 class="subheader">
+						A Project: 
+						<!-- 
+		<span class="subheader">
+		Something that took me more then a day to do.
+		</span>
+		-->
+						</h4>
+						<h3>
+							Mitchell Morse Machine 
+						</h3>
+
+							<blockquote>
+								 I built a web-connected morse code machine (key and sounder) for my parents for Christmas. I used an Arduino Yun to connect the machine to an API, which I built (using Laravel), along with a simple web application.
+							</blockquote>
+
+						
+							<div class="video-wrapper">
+								<iframe src="http://www.youtube.com/embed/XAbIfIo7n2A?wmode=transparent&amp;modestbranding=1&amp;autohide=1&amp;showinfo=0&amp;rel=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+								</iframe>
+							</div>
+							
+						<div class="more-card">
+							<a href="/projects">
+								<i class="fi-link"></i>
+								More Projects 
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="columns content-card blog">
+						<h4 class="subheader">
+						Latest Blog Post: 
+						<!-- 
+		<span class="subheader">
+		Something that took me more then a day to do.
+		</span>
+		-->
+						</h4>
+						<h3>
+							Making Morsel: Python for the Arduino Yun
+						</h3>
+						<p>
+							I've never written Python before this project, but I've always wanted to. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+						</p>
+						<pre>
+							<code class="language-python">
+def get_transmission(self):
+    #We're getting transmissions that have been sent to
+	#us, and have not yet been marked as received
+    self.url = self.base_url + self.base_api + "transmissions?direction=received&received=0"
+    self.data = ""
+
+    #generate a hmac signature for the request
+    signature = self.get_hmac_hash()
+
+    request = urllib2.Request(self.url)
+    request.add_header('Auth', str(self.id) + ':' + signature)
+
+    try:
+        response = urllib2.urlopen(request)
+        data = json.load(response)
+    except Exception, e:
+        return False
+
+    if len(data) > 0:
+        return data
+    else:
+        return False
+									</code>
+								</pre>
+
+						
+							
+						<div class="more-card">
+							<a href="/blog">
+								<i class="fi-link"></i>
+								Blog
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="columns large-3 small-12">
+				<div class="row">
+					<div class="columns content-card">
+						<div id="hcard-Kevin-A-Mitchell" class="vcard row">
+							<div class="columns large-12 medium-6 small-12">
+								<img src="img/me_beard.jpg" alt="photo of Kevin" class="photo"/>
+								<span class="fn n">
+									<span class="given-name">
+										Kevin
+									</span>
+									<span class="additional-name">
+										A
+									</span>
+									<span class="family-name">
+										Mitchell
+									</span>
+								</span>
+							</div>
+							<div class="columns large-12 medium-6 small-12">
+								<a class="email" href="mailto:kevin@develpr.com">
+								kevin@develpr.com </a>
+								<div class="adr">
+									<span class="locality">
+										Oakland 
+									</span>
+									, 
+									<span class="region">
+										CA 
+									</span>
+									, 
+									<span class="postal-code">
+										94612 
+									</span>
+									<span class="country-name">
+										USA 
+									</span>
+								</div>
+								<div class="tel">
+									 +1.616.401.2066
+								</div>
+							</div>
+							<div class="columns large-12">
+								<div class="more-card">
+									<a href="#">
+										<i class="fi-link"></i>
+										Resume 
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<div class="row footer">
+			<div class="columns large-12">
+				<ul>
+					<li>
+						Thanks for visiting my world wide website! 
+					</li>
+				</ul>
+			</div>
+		</div>
+		</section>
+		<!-- DON'T GO DOWN THERE IT'S REALLY DANGEROUS!!! -->
+		<a class="exit-off-canvas">
+		</a>
+	</div>
+</div>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+<script src="js/vendor/svg.min.js"></script>
+<script src="js/vendor/prism.js"></script>
+<script src="js/vendor/svg.filter.min.js"></script>
+
+<script>
+	$(document).foundation();
+</script>
+<script>
+	$(function(){
+		
+		$(".off-canvas-list").html($('.large-menu ul').html());
+		
+		var draw = SVG('me-here')
+		var images = ["sai.jpg"];			
+		var image = draw.image('img/' + images[Math.floor(Math.random() * images.length)]).size(100, 100);
+		var circle = draw.circle(100,100);
+	
+		image.clipWith(circle);
+
+	});
+</script>
+</body>
+</html>
+
