@@ -5147,7 +5147,7 @@ th.hide-for-touch {
   
   .title{
 	  font-family: 'Nothing You Could Do', cursive;
-	  font-size:5.7em;
+	  font-size:5.21em;
     	margin:0;
     	padding:0;
     	color: #333333;
@@ -5162,6 +5162,8 @@ th.hide-for-touch {
   
   #me-here{
 	  height:100px;
+	  width:100px;
+	  margin: 0 auto;
   }
   
   .large-menu{
