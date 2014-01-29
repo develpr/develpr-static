@@ -5154,6 +5154,10 @@ th.hide-for-touch {
     	text-shadow: 0 1px 2px #FFF;
 		padding:.2em 0 0 0;
   }
+
+  .title span{
+	  color:white; opacity:.5; font-size:.6em; position:relative; top:-.2em;
+  }
   
   .i-will-be-down-there-a-bit{
 	  margin-top:2em;
@@ -5232,11 +5236,31 @@ th.hide-for-touch {
   .footer ul{
 	  list-style:none;
   }
-  
-/*  pre[class*="language-"] {
-	  padding:inherit !important;
-	  margin: inherit !important;
+
+  ul.github-stats{
+	  list-style:none;
+	  margin:0;
+	  text-align: center;
   }
+
+  ul.github-stats span{
+	  text-transform: uppercase;
+  }
+
+  .github-stats li{
+	  font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	  font-size:.81em;
+
+  }
+
+  .github-stats li a{
+	  display:block;
+	  font-size:1.2em;
+	  color:#208AE9;
+  }
+  
+/*
+* sidebar config
   */
 @media only screen and (min-width: 64.063em) {
 	
@@ -5257,5 +5281,73 @@ th.hide-for-touch {
 }
 
 
+/**
+  *		GITHUB gears animation
+  */
+.gears{
+	float:left;
+	width:30%;
+	padding:.5em 0 0 0;
+}
+.gears .fi-widget{
+	display:block;
+	float:left;
+}
+.big-gear{
+	font-size:2em;
 
-  
+	margin:.1em 0 0 .5em;
+}
+.small-gear{
+	font-size:1em;
+	margin:.1em 0 0 -.16em;
+}
+
+@keyframes rotating {
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+
+@-webkit-keyframes rotating {
+	from{
+		-webkit-transform: rotate(0deg);
+	}
+	to{
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+
+@-webkit-keyframes rotating-counter {
+	from{
+		-webkit-transform: rotate(360deg);
+	}
+	to{
+		-webkit-transform: rotate(0deg);
+	}
+}
+
+@keyframes rotating-counter {
+	from{
+		transform: rotate(360deg);
+	}
+	to{
+		transform: rotate(0deg);
+	}
+}
+
+.rotating {
+	-webkit-animation: rotating 2s linear infinite;
+	animation:rotating 2s linear infinite;
+}
+
+.rotating-counter {
+	-webkit-animation: rotating-counter 1.5s linear infinite;
+	animation:rotating-counter 1.5s linear infinite;
+}
+

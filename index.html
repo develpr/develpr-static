@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kevin Mitchell - Ngnr</title>
+<title>Kevin Mitchell - Develpr</title>
 <link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/foundation.css"/>
 <link rel="stylesheet" href="css/foundation-icons.css"/>
@@ -34,7 +34,7 @@
 						</div>
 					</div>
 					<div class="large-8 medium-8 small-12 columns">
-						<div class="title"><span style="color:white;">e</span>ng<span style="color:white;">i</span>n<span style="color:white;">ee</span>r</div>
+						<div class="title">devel<span>o</span>p<span>e</span>r</div>
 					</div>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 					Blog </a>
 					</li>
 					<li>
-					<a href="http://www.github.com/ngnr" target="_blank">
+					<a href="http://www.github.com/develpr" target="_blank">
 					<i class="fi-social-github"></i>
 					Github </a>
 					</li>
@@ -217,9 +217,50 @@ def get_transmission(self):
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- END MAIN CONTENT -->
-		</div>
+                <div class="row hide github-card">
+                    <div class="columns content-card">
+                        <div class="row">
+                            <div class="columns large-12 small-12 medium-6">
+                                <div class="gears">
+                                    <i class="fi-widget rotating big-gear"></i>
+                                    <!--<i class="fi-widget rotating hide medium-gear"></i>-->
+                                    <i class="fi-widget rotating-counter small-gear"></i>
+                                </div>
+                                <h3 class="subheader" style="width:70%; float:left;">
+                                    I write code
+                                </h3>
+                            </div>
+                            <div class="columns large-12 small-12 medium-6">
+                                <ul class="github-stats">
+                                    <li class="repositories">
+                                        <span>Number of repositories</span>
+                                        <a href="#">16</a>
+                                    </li>
+                                    <li class="commitDate">
+                                        <span>Last pushed at</span>
+                                        <a href="#">16</a>
+                                    </li>
+                                    <li class="commitMessage">
+                                        <span>Latest commit message</span>
+                                        <a href="#">16</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="columns large-12">
+                                <div class="more-card">
+                                    <a href="#">
+                                        <i class="fi-social-github rotating"></i>
+                                        Github
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div><!-- END RIGHT SIDE BAR -->
+		</div><!-- END MAIN CONTENT -->
 		<div class="row footer">
 			<div class="columns large-12">
 				<ul>
@@ -257,17 +298,94 @@ def get_transmission(self):
 	
 		image.clipWith(circle);
 
+        var gitHubResultJson = null;
+
+        $.ajax({
+            type: "GET",
+            url: "https://api.github.com/users/develpr",
+            dataType: "json",
+            crossDomain: true,
+            complete: function(data){
+
+                var userJSON = data.responseJSON;
+                var reposCount = userJSON.public_repos;
+                var reposURL = userJSON.repos_url + "?sort=pushed";
+                var userURL = userJSON.html_url;
+
+                $.ajax({
+                    type: "GET",
+                    url: reposURL,
+                    dataType: "json",
+                    crossDomain: true,
+                    complete: function(data){
+
+                        if(!data.responseJSON){
+                            return;
+                        }
+
+
+
+                        var reposJSON = data.responseJSON;
+                        var commitsURL = reposJSON[0].commits_url.replace("{/sha}","");
+
+                        var lastCommitDate = new Date(reposJSON[0].updated_at);
+                        var lastCommitDate = (lastCommitDate.getMonth()+1) + "/" + lastCommitDate.getDate() + "/" + lastCommitDate.getFullYear();
+
+                        $.ajax({
+                            type: "GET",
+                            url: commitsURL,
+                            dataType: "json",
+                            crossDomain: true,
+                            complete: function(data){
+
+                                if(!data.responseJSON){
+                                    return;
+                                }
+
+                                commitsJSON = data.responseJSON;
+                                console.log(commitsJSON);
+
+                                var commitMessage = "";
+                                var commitURL = "";
+
+                                $.each(commitsJSON, function(index, item){
+                                    if(item.author.login == "develpr"){
+                                        commitMessage = commitsJSON[0].commit.message;
+                                        commitURL = commitsJSON[0].html_url;
+                                        return;
+                                    }
+                                    if(commitURL.length > 0)
+                                        return;
+                                });
+
+                                $('.repositories a').attr('href', userURL).html(reposCount);
+                                $('.commitDate a').attr('href', commitURL).html(lastCommitDate);
+                                $('.commitMessage a').attr('href', commitURL).html(commitMessage);
+
+                                //show the card
+                                $('.github-card').removeClass('hide');
+                            }
+                        });
+
+                    }
+                });
+            }
+        });
+//
+//        $.getJSON( "https://api.github.com?callback=asdfasfasfdsa", function( data ) {
+//
+//        });
+
 	});
 </script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-10817444-25', 'ngnr.co');
-  ga('send', 'pageview');
-
+    ga('create', 'UA-10817444-15', 'develpr.com');
+    ga('send', 'pageview');
 </script>
 </body>
 </html>
