@@ -1,1 +1,1 @@
-Static template files for develpr.com
+Static template files for develpr.com.
