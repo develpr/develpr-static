@@ -147,28 +147,28 @@
 
 						<pre class="hide-for-small code-snippet">
 							<code class="language-python">
-                                def get_transmission(self):
-                                #We're getting transmissions that have been sent to
-                                #us, and have not yet been marked as received
-                                self.url = self.base_url + self.base_api + "transmissions?direction=received&received=0"
-                                self.data = ""
+def get_transmission(self):
+    #We're getting transmissions that have been sent to
+    #us, and have not yet been marked as received
+    self.url = self.base_url + self.base_api + "transmissions?direction=received&received=0"
+    self.data = ""
 
-                                #generate a hmac signature for the request
-                                signature = self.get_hmac_hash()
+    #generate a hmac signature for the request
+    signature = self.get_hmac_hash()
 
-                                request = urllib2.Request(self.url)
-                                request.add_header('Auth', str(self.id) + ':' + signature)
+    request = urllib2.Request(self.url)
+    request.add_header('Auth', str(self.id) + ':' + signature)
 
-                                try:
-                                response = urllib2.urlopen(request)
-                                data = json.load(response)
-                                except Exception, e:
-                                return False
+    try:
+    response = urllib2.urlopen(request)
+    data = json.load(response)
+    except Exception, e:
+    return False
 
-                                if len(data) > 0:
-                                return data
-                                else:
-                                return False
+    if len(data) > 0:
+    return data
+    else:
+    return False
                             </code>
 								</pre>
 
@@ -296,7 +296,8 @@
 <script src="bower_components/jquery/jquery.js"></script>
 <script src="bower_components/foundation/js/foundation.min.js"></script>
 <script src="bower_components/svg.js/dist/svg.min.js"></script>
-<script src="bower_components/prism.js"></script>
+<!--<script src="bower_components/prismjs/prism.js"></script>-->
+<script src="js/prism.js"></script>
 <script src="js/app.js"></script>
 
 <script>
