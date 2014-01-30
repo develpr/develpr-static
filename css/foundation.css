@@ -5365,3 +5365,18 @@ th.hide-for-touch {
 	animation:rotating-counter 1.5s linear infinite;
 }
 
+
+.show-the-code, .hide-the-code{
+	padding:.5em 0;
+	font-size:2.3em;
+	text-align: center;
+	cursor:pointer;
+}
+
+.hide-the-code{
+	display:none;
+}
+
+.show-the-code i, .hide-the-code i{
+	font-size:.9em;
+}

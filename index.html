@@ -81,7 +81,6 @@
 			<div class="columns large-9 small-12 create-right-buffer">
                 <div class="row">
                     <div class="columns content-card intro">
-                        <img src="img/wide_title_photo_2.jpg" />
                         <p>
                             Hi, I'm Kevin. I'm a software engineer living Oakland California. I occasionally have something useful to say or interesting to share, and this is the place for me to do it.
                         </p>
@@ -144,7 +143,9 @@
 						<p>
 							I've never written Python before this project, but I've always wanted to. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 						</p>
-						<pre>
+                        <div class="hide-the-code hide-for-medium-up"><i class="fi-arrows-out"></i> toggle the &#60;code&#62; <i class="fi-arrows-out"></i></div>
+
+						<pre class="hide-for-small code-snippet">
 							<code class="language-python">
 def get_transmission(self):
     #We're getting transmissions that have been sent to
@@ -304,6 +305,12 @@ def get_transmission(self):
 <script>
 	
 	$(function(){
+
+        $('.hide-the-code').on('click', function(event){
+           event.preventDefault();
+           $('.code-snippet').toggleClass('hide-for-small');
+           $('.hide-the-code i').toggleClass('fi-arrows-out').toggleClass('fi-arrows-in');
+        });
 		
 		$(".off-canvas-list").html($('.large-menu ul').html());
 		
@@ -376,7 +383,7 @@ def get_transmission(self):
 
                                 $('.repositories a').attr('href', userURL).html(reposCount);
                                 $('.commitDate a').attr('href', commitURL).html(lastCommitDate);
-                                $('.commitMessage a').attr('href', commitURL).html(commitMessage);
+                                $('.commitMessage a').attr('href', commitURL).html("<pre>"+commitMessage+"</pre>");
 
                                 //show the card
                                 $('.github-card').removeClass('hide');
