@@ -2815,7 +2815,6 @@ blockquote p {
 
 /* Microformats */
 .vcard {
-	padding:10px 0;
 
   display: inline-block; }
   .vcard li {
@@ -2829,6 +2828,13 @@ blockquote p {
 		margin-bottom:.5em;
 	}
 
+	.vcard h1{
+		font-family:inherit;
+		font-size:1.3em;
+		line-height:inherit;
+		padding:inherit;
+		margin:inherit;
+	}
 .vevent .summary {
   font-weight: bold; }
 .vevent abbr {
@@ -5198,6 +5204,7 @@ th.hide-for-touch {
   }
   
   .content-card{
+	  padding-top:1em;
 	  background:url("../img/paper_fibers.png") top left repeat;
 	  text-shadow: 0 1px 2px #FFF;
 	  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.45);
@@ -5241,6 +5248,7 @@ th.hide-for-touch {
 	  list-style:none;
 	  margin:0;
 	  text-align: center;
+	  word-wrap:break-word;
   }
 
   ul.github-stats span{
@@ -5258,6 +5266,12 @@ th.hide-for-touch {
 	  font-size:1.2em;
 	  color:#208AE9;
   }
+
+.github-stats li.commitMessage a{
+	text-align:left;
+}
+
+
   
 /*
 * sidebar config
