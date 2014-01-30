@@ -64,7 +64,6 @@ $(function(){
 							}
 
 							commitsJSON = data.responseJSON;
-							console.log(commitsJSON);
 
 							var commitMessage = "";
 							var commitURL = "";
