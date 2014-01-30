@@ -5153,12 +5153,13 @@ th.hide-for-touch {
   
   .title{
 	  font-family: 'Nothing You Could Do', cursive;
-	  font-size:5.21em;
+	  font-size:4.61em;
     	margin:0;
     	padding:0;
     	color: #333333;
     	text-shadow: 0 1px 2px #FFF;
 		padding:.2em 0 0 0;
+	  text-align: center;
   }
 
   .title span{
@@ -5368,7 +5369,7 @@ th.hide-for-touch {
 
 .show-the-code, .hide-the-code{
 	padding:.5em 0;
-	font-size:2.3em;
+	font-size:1.83em;
 	text-align: center;
 	cursor:pointer;
 }
@@ -5378,5 +5379,5 @@ th.hide-for-touch {
 }
 
 .show-the-code i, .hide-the-code i{
-	font-size:.9em;
+	font-size:.78em;
 }
