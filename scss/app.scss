@@ -1,0 +1,292 @@
+@import "settings";
+@import "foundation";
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switch",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+.vcard img{
+  margin-bottom:.5em;
+}
+
+.vcard h1{
+  font-family:inherit;
+  font-size:1.3em;
+  line-height:inherit;
+  padding:inherit;
+  margin:inherit;
+}
+
+body{
+  background:url('../img/bedge_grunge.png') top left repeat;
+}
+
+h1,h2,h3{
+  color: #333333;
+  text-shadow: 0 1px 2px #FFF;
+}
+
+.title{
+  font-family: 'Nothing You Could Do', cursive;
+  font-size:4.61em;
+  margin:0;
+  padding:0;
+  color: #333333;
+  text-shadow: 0 1px 2px #FFF;
+  padding:.2em 0 0 0;
+  text-align: center;
+}
+
+.title span{
+  color:white; opacity:.5; font-size:.6em; position:relative; top:-.2em;
+}
+
+.i-will-be-down-there-a-bit{
+  margin-top:2em;
+  margin-bottom:30px;
+}
+
+#me-here{
+  height:100px;
+  width:100px;
+  margin: 0 auto;
+}
+
+.large-menu{
+  margin-top:45px;
+}
+
+.large-menu ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  float:right;
+}
+
+.large-menu li{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #333333;
+  text-shadow: 0 1px 2px #FFF;
+  float:left;
+}
+
+.large-menu li a{
+  padding:4px 15px;
+  font-size:1.2em;
+}
+
+.large-menu li a i, .off-canvas-list li a i{
+  margin-right:7px;
+}
+
+.content-card{
+  padding-top:1em;
+  background:url("../img/paper_fibers.png") top left repeat;
+  text-shadow: 0 1px 2px #FFF;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.45);
+  -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.45);
+  box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.45);
+  margin-bottom:1.82em;
+}
+
+.video-wrapper{
+  position: relative; overflow: hidden; height: 0; background-color: transparent; padding-bottom: 56.25%; margin: 0.5em 0;
+}
+
+
+h4.subheader{
+  margin-top:.4em;
+}
+
+.more-card{
+  margin-top:1em;
+  padding:1.2em .5em 1.2em 0;
+  border-top:2px solid #ccc;
+  color:blue;
+  font-size:1.3em;
+  text-align:right;
+}
+
+.more-card a{
+  display:block;
+}
+
+
+.footer{
+  padding:2em 0;
+  text-align:center;
+}
+.footer ul{
+  list-style:none;
+}
+
+ul.github-stats{
+  list-style:none;
+  margin:0;
+  text-align: center;
+  word-wrap:break-word;
+}
+
+ul.github-stats span{
+  text-transform: uppercase;
+}
+
+.github-stats li{
+  font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size:.81em;
+
+}
+
+.github-stats li a{
+  display:block;
+  font-size:1.2em;
+  color:#208AE9;
+}
+
+.github-stats li.commitMessage a{
+  text-align:left;
+}
+
+
+
+/*
+* sidebar config
+  */
+@media only screen and (min-width: 64.063em) {
+
+  .create-right-buffer{
+    padding-right: 2.5em;
+  }
+}
+
+@media only screen and (max-width: 64.062em) {
+
+  .content-cards{
+    padding:1em;
+  }
+
+  .content-cards .content-card{
+    margin-bottom:1em;
+  }
+}
+
+
+/**
+  *		GITHUB gears animation
+  */
+.gears{
+  float:left;
+  width:30%;
+  padding:.5em 0 0 0;
+}
+.gears .fi-widget{
+  display:block;
+  float:left;
+}
+.big-gear{
+  font-size:2em;
+
+  margin:.1em 0 0 .5em;
+}
+.small-gear{
+  font-size:1em;
+  margin:.1em 0 0 -.16em;
+}
+
+@keyframes rotating {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+
+@-webkit-keyframes rotating {
+  from{
+    -webkit-transform: rotate(0deg);
+  }
+  to{
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+
+@-webkit-keyframes rotating-counter {
+  from{
+    -webkit-transform: rotate(360deg);
+  }
+  to{
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@keyframes rotating-counter {
+  from{
+    transform: rotate(360deg);
+  }
+  to{
+    transform: rotate(0deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  animation:rotating 2s linear infinite;
+}
+
+.rotating-counter {
+  -webkit-animation: rotating-counter 1.5s linear infinite;
+  animation:rotating-counter 1.5s linear infinite;
+}
+
+
+.show-the-code, .hide-the-code{
+  padding:.5em 0;
+  font-size:1.53em;
+  text-align: center;
+  cursor:pointer;
+}
+
+.hide-the-code{
+  display:none;
+}
+
+.show-the-code i, .hide-the-code i{
+  font-size:.78em;
+}
