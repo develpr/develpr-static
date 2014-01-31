@@ -39,7 +39,7 @@ develpr.shakeAlarm = function(){
 
 	$( ".alarm" ).animate({left:direction}, howLong);
 
-	setTimeout(function(){develpr.shakeAlarm()}, 8*second);
+	setTimeout(function(){develpr.shakeAlarm()}, 16*second);
 }
 
 develpr.sleepAlarm = function(){
