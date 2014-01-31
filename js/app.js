@@ -2,22 +2,79 @@
 // Documentation can be found at: http://foundation.zurb.com/docs
 $(document).foundation();
 
+
+window.second = 1000;
+window.develpr = {};
+
+develpr.sleepAlarmTimeout;
+
+develpr.getShakeDirection = function(alarm){
+	var width = alarm.parent().width();
+	//how far should the alarm shake? I don't know!
+	var magnitude = width / 12;
+	var currentPosition = alarm.position();
+	var direction = Math.floor((Math.random()*2)) == 0 ? "-=" : "+=";
+
+	if(currentPosition.left - magnitude < 0)
+		direction = "+=";
+	else if(currentPosition.left + magnitude + alarm.width() > width)
+		direction = "-=";
+
+	return direction + magnitude;
+
+}
+
+develpr.shakeAlarm = function(){
+
+	//between 3 and 6 seconds seems reasonable
+	var howLong = Math.floor((Math.random()*3)+3) * second;
+	$('.alarm').addClass('shake');
+	develpr.sleepAlarmTimeout = setTimeout(function(){
+			develpr.sleepAlarm()
+		},
+		howLong
+	);
+
+	var direction = develpr.getShakeDirection($('.alarm'));
+
+	$( ".alarm" ).animate({left:direction}, howLong);
+
+	setTimeout(function(){develpr.shakeAlarm()}, 8*second);
+}
+
+develpr.sleepAlarm = function(){
+	$('.alarm').removeClass('shake');
+}
+
+
 $(function(){
 
+	develpr.shakeAlarm();
+
+	//Simple toggle for showing/hiding the code snippets on smaller devices
 	$('.hide-the-code').on('click', function(event){
 		event.preventDefault();
 		$('.code-snippet').toggleClass('hide-for-small');
 		$('.hide-the-code i').toggleClass('fi-arrows-out').toggleClass('fi-arrows-in');
 	});
 
+
+	//copy the main navigation into the off page menu
+	//todo: when I move this into Laravel I'll probably not need this
 	$(".off-canvas-list").html($('.large-menu ul').html());
+
+
 
 	var draw = SVG('me-here')
 	var images = ["sai.jpg"];
 	var image = draw.image('img/' + images[Math.floor(Math.random() * images.length)]).size(100, 100);
 	var circle = draw.circle(100,100);
-
 	image.clipWith(circle);
+
+
+
+
+
 
 	var gitHubResultJson = null;
 

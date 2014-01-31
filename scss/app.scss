@@ -292,3 +292,35 @@ ul.github-stats span{
 .show-the-code i, .hide-the-code i{
   font-size:.78em;
 }
+
+@-webkit-keyframes shake {
+  0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+  10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { -webkit-transform: translate(-1px, 0px) rotate(1deg); }
+  30% { -webkit-transform: translate(0px, 1px) rotate(0deg); }
+  40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+  50% { -webkit-transform: translate(-1px, 1px) rotate(-1deg); }
+  60% { -webkit-transform: translate(-1px, 1px) rotate(0deg); }
+  70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+  80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+  90% { -webkit-transform: translate(1px, 2px) rotate(0deg); }
+  100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  -webkit-animation-duration: 0.4s;
+  -webkit-transform-origin:50% 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  display:inline-block;
+}
+
+.alarm{
+  cursor:pointer;
+  position:relative;
+}
+
+.footer .alarm{
+  height:100px;
+}
